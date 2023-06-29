@@ -1,6 +1,6 @@
 
 import { type } from "./util/io.js";
-import { toggleFullscreen, boot } from "./util/screens.js";
+import { boot } from "./util/screens.js";
 import { registerHandlers } from "./util/ui.mjs";
 
 async function onLoad() {
@@ -8,7 +8,6 @@ async function onLoad() {
 	const urlParams = new URLSearchParams(window.location.search);
 	const command = urlParams.get("command");
 	const debugParam = urlParams.get("debug");
-	const fullscreen = urlParams.get("fullscreen");
 
 	// Set up click event handlers for UI buttons
 	registerHandlers();

@@ -69,7 +69,6 @@ function registerHandlers() {
 	document.getElementById('slider').addEventListener('click', togglePower);
 
 	// Other UI
-	document.getElementById('fullscreen').addEventListener('click', fullscreen);
 	document.getElementById('crt').addEventListener('click', handleClick);
 	document.getElementById('sticky').addEventListener('click', fly);
 	document.getElementById("dial").addEventListener("input", handleVolume);
