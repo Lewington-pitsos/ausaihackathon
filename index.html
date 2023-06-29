@@ -19,7 +19,7 @@
 			href="style/switch.css"
 		/>
 		<link rel="icon" type="image/png" href="favicon.png" />
-		<title>TERMINAL v0.01-alpha</title>
+		<title>AusAI Hackathon 2023</title>
 		<script src="./components/dial.js"></script>
 		<script src="https://unpkg.com/rot-js@2.1.1/dist/rot.js"></script>
 
@@ -58,71 +58,25 @@
 
 	<body class="theme-green fullscreen">
 		<div id="monitor" class="on">
-			<div id="screen">
-				<div id="crt">
-					<div class="scanline"></div>
-					<div class="terminal"></div>
-				</div>
-			</div>
+
+
+            <div id="crt">
+                <div id="bound">
+                    <div class="scanline"></div>
+                    <div class="terminal"></div>
+                    <div class="sidebar">
+                        <div class="sidebar-contents">
+                            <h1>Sponsors</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 			<div id="slider">
 				<label class="switch">
 					<input type="checkbox" />
 					<span class="slider"></span>
 				</label>
-			</div>
-
-			<div id="controls">
-				<div id="sticky" class="post-it">
-					Admin<br />only
-				</div>
-
-				<div id="themes">
-					<button
-						id="theme-red"
-						class="theme"
-					></button>
-					<button
-						id="theme-green"
-						class="theme active"
-					></button>
-					<button
-						id="theme-blue"
-						class="theme"
-					></button>
-				</div>
-
-				<div id="volume">
-					<span>min</span>
-
-					<div id="dial-container">
-						<x-dial
-							id="dial"
-							min="0"
-							max="0.75"
-							value="0"
-							svgsymbolid="circle-with-dot"
-						>
-						</x-dial>
-					</div>
-					<span>max</span>
-				</div>
-
-				<div id="power">
-					<label class="rocker rocker-small">
-						<input
-							id="switch"
-							type="checkbox"
-							checked
-						/>
-						<span class="switch-left"
-							>O</span
-						>
-						<span class="switch-right"
-							>I</span
-						>
-					</label>
-				</div>
 			</div>
 		</div>
 

@@ -58,20 +58,6 @@ function globalListener({ keyCode }) {
 
 function registerHandlers() {
 	document.addEventListener("keydown", globalListener);
-
-	// Theme
-	document.getElementById('theme-red').addEventListener('click', (e) => theme(e, 'red'));
-	document.getElementById('theme-green').addEventListener('click', (e) => theme(e, 'green'));
-	document.getElementById('theme-blue').addEventListener('click', (e) => theme(e, 'blue'));
-
-	// Power
-	document.getElementById('switch').addEventListener('click', togglePower);
-	document.getElementById('slider').addEventListener('click', togglePower);
-
-	// Other UI
-	document.getElementById('crt').addEventListener('click', handleClick);
-	document.getElementById('sticky').addEventListener('click', fly);
-	document.getElementById("dial").addEventListener("input", handleVolume);
 }
 
 export { registerHandlers };

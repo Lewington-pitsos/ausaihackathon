@@ -203,6 +203,15 @@ pre {
 	/* animation-fill-mode: forwards; */
 }
 
+#bound {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.sidebar {}
+
 #monitor:not(.off) #crt:before {
 	content: " ";
 	display: block;
@@ -255,6 +264,7 @@ body.fullscreen #crt {
 }
 
 .terminal {
+	width: 550px;
 	position: relative;
 	height: 100%;
 	padding: 2rem;
