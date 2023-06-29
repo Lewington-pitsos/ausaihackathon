@@ -6,60 +6,143 @@ import say from "./speak.js";
 const USER = "admin";
 const PW = "admin";
 
-/** Boot screen */
-async function boot() {
-	clear();
+const ROOT_URL = "http://127.0.0.1:5500/index.html"
 
-	await type("***** AusAI Hackathon 2023 *****", {});
+function typeMenue() {
+	type("* Home", {link: ROOT_URL})
+	type("* Sign Up", {link: ROOT_URL})
+	type("* Connect", {link: ROOT_URL + "?goto=connect"})
+	type("* Judges and Speakers", {link: ROOT_URL + "?goto=judges"})
+	type("* Prize Tracks", {link: ROOT_URL + "?goto=prizes"})
+	type("* FAQ", {link: ROOT_URL + "?goto=faq"})
+}
+
+
+async function typeMainPage() {
 	await type("    Solving Aussie Problems", {});
 
 	await type("\n", {});
 	await type("Location:   KATHLEEN SYME COMMUNITY HALL", {});
-	await type("Prize Pool: $10,000", {});
 
+	await newline()
 
+	type(">>> November 11th: Kickoff <<<", {}),
+	type("1100 - Keynote", {}),
+	type("1130 - Team Formation", {}),
+	type("1330 - Lunch Break", {}),
+	type("1800 - Closing Keynote", {}),
+	await type("1830 - Pub (optional)", {})
+	await newline()
 
-
-
-	await type([
-		"\n",
-		"\n",
-		">>> November 11th: Kickoff <<<",
-		"1100 - Kickoff",
-		"1130 - Team Formation",
-		"1330 - Lunch Break",
-		"1800 - Closing Keynote",
-		"1830 - Pub (optional)"
-	], {wait: 3, lineWait: 10})
-
-
-	await type([
-		"\n",
-		">>> November 18th: Pitch Night <<<",
-		"1600 - Keynote",
-		"1630 - Pitches",
-		"1730 - Apperteifs / Judging",
-		"1800 - Results",
-		"1830 - Closing Keynote",
-		"1900 - Pub 2 (optional)"
-	], {wait: 3, lineWait: 10})
-
-	
-
-	await type("\n\n", {})
-
-	
-	type("EOI Form", {})
-	type("ML/AI Meetup", {})
-	type("hello@adfhadfsj.com", {})
-	type("Judges and Speakers", {})
-	type("Prize Tracks", {})
-	type("FAQ", {})
-
-
-	// await pause();
-	// return login();
+	type(">>> November 18th: Pitch Night <<<", {})
+	type("1600 - Keynote", {})
+	type("1630 - Pitches", {})
+	type("1730 - Judging", {})
+	type("1800 - Results", {})
+	await type("1900 - Pub 2 (optional)", {})
+	await doubleNewline()
 }
+
+
+async function typeMail() {
+	await type("hello@aihackmelb.com", {link: "mailto:hello@aihackmelb.com"})
+}
+
+async function doubleNewline() {
+	await type(["\n", "\n"], {});
+}
+
+
+async function newline() {
+	await type("\n", {});
+}
+
+async function typeConnect() {
+	await doubleNewline()
+	await type(">>> Drop us a line <<<", {})
+	await newline()	
+
+	type("EOI Form", {link: ROOT_URL + "?command=help"})
+	typeMail();
+	type("ML/AI Meetup", {link: "https://www.meetup.com/en-AU/machine-learning-ai-meetup/"})
+	await doubleNewline()
+}
+
+const faq_content = `
+
+>>> FAQ <<<
+
+Q: How does it work?
+A: You form a team (or bring one) on the 11th,
+   then you have a week to build an AI project.
+   On the 18th you pitch it to the judges.
+   
+Q: Who is this for? 
+A: Anyone who wants to:
+ - Battle test latest Machine Learning/AI tools
+ - Meet other Machine Learning professionals
+ - Win ca$h money
+ - Possibly get hired by a sponsor
+
+Q: What to I need to bring on the day?
+A: Your laptop and your manners
+
+`.split('\n').map(line => line === "" ? "\n" : line)
+
+
+async function typeJudges() {
+	const judges_content = `
+
+>>> Judges and Speakers <<<
+
+We are seeking judges and speakers. 
+If you know someone with the chops, hit us up.
+
+`
+	
+	await type(judges_content, {})
+	await typeMail()
+	await doubleNewline()
+}
+
+async function typePrizes() {
+	const prizes_content = `
+
+>>> Price Tracks <<<
+
+We are seeking sponsors.
+If you want early exposure to emerging machine
+learning talent in Melbourne, let's talk.
+
+`
+	
+	await type(prizes_content, {})
+	await typeMail()
+	await doubleNewline()
+}
+
+/** Boot screen */
+async function boot(page) {
+	clear();
+
+	await type("***** AusAI Hackathon 2023 *****", {});
+
+	if (page === 'faq') {
+		await type(faq_content, {});
+	} else if (page === 'judges') {
+		await typeJudges()
+	} else if (page === 'prizes') {
+		await typePrizes()
+	} else if (page === 'connect') {
+		await typeConnect();
+	} else {
+		await typeMainPage();
+	}
+
+	typeMenue(page)
+}
+
+
 
 /** Login screen */
 async function login() {

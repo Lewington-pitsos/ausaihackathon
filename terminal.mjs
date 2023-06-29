@@ -9,10 +9,13 @@ async function onLoad() {
 	const command = urlParams.get("command");
 	const debugParam = urlParams.get("debug");
 
+	const pageHref = window.location.search;
+	const searchParams = new URLSearchParams(pageHref.substring(pageHref.indexOf('?')));
+
 	// Set up click event handlers for UI buttons
 	registerHandlers();
 
-	boot();
+	boot(searchParams.get('goto'));
 
 	// If a command is passed in the URL, execute that immediately
 	if (command || debugParam) {

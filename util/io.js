@@ -77,12 +77,13 @@ function getChar(char) {
  * @param {Boolean} options.stopBlinking Stop blinking when typing is done
  * @param {Boolean} options.processChars Whether to preprocess spaces, tabs and newlines to &nbsp; (3x&nbsp;) and <br>
  * @param {Boolean} options.clearContainer Clear container before typing
+ * @param {String} options.link 
  * @param {Element} container DOM element where text will be typed
  */
 async function type(
 	text,
 	options = {},
-	container = document.querySelector(".terminal")
+	container = document.querySelector(".terminal"),
 ) {
 	if (!text) return Promise.resolve();
 
@@ -95,7 +96,8 @@ async function type(
 		useContainer = false,
 		stopBlinking = true,
 		processChars = true,
-		clearContainer = false
+		clearContainer = false,
+		link = null,
 	} = options;
 
 	// If text is an array, e.g. type(['foo', 'bar'])
@@ -134,7 +136,16 @@ async function type(
 		}
 
 		if (!useContainer) {
-			container.appendChild(typer);
+			if (options.link) {
+				const lnk = document.createElement("a");
+				lnk.setAttribute("href", options.link)
+				
+				lnk.appendChild(typer)
+				container.appendChild(lnk);
+			} else {
+				container.appendChild(typer);
+			}
+
 		}
 
 		if (initialWait) {

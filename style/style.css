@@ -270,13 +270,13 @@ body.fullscreen #crt {
 
 .terminal {
 	margin-right: 200px;
-	width: 550px;
+	width: 650px;
 	position: relative;
 	height: 100%;
 	padding: 2rem;
 	word-break: break-word;
 	text-transform: uppercase;
-	animation: textShadow 4s infinite;
+	/* animation: textShadow 4s infinite; */
 }
 
 .terminal,
@@ -285,10 +285,23 @@ body.fullscreen #crt {
 	text-shadow: 0 0 5px #c8c8c8;
 }
 
+.terminal,
+.fullscreen a {
+	color: var(--color);
+}
+
+
 ::selection {
 	background: var(--color);
 	color: var(--bg);
 	text-shadow: none;
+}
+
+.scanline-holder {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 180px;
 }
 
 /* Scanline moving top to bottom over the screen */
@@ -306,7 +319,7 @@ body.fullscreen #crt {
 	position: absolute;
 	bottom: 100%;
 	pointer-events: none;
-	animation: scanline 10s linear infinite;
+	animation: scanline 8s linear infinite;
 }
 
 /*********** CONTROLS *************/
