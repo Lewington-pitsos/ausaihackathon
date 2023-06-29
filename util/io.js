@@ -87,10 +87,10 @@ async function type(
 	if (!text) return Promise.resolve();
 
 	let {
-		wait = 30,
-		initialWait = 1000,
-		finalWait = 500,
-		lineWait = 100,
+		wait = 10,
+		initialWait = 100,
+		finalWait = 150,
+		lineWait = 60,
 		typerClass = "",
 		useContainer = false,
 		stopBlinking = true,

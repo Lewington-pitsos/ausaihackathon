@@ -10,37 +10,55 @@ const PW = "admin";
 async function boot() {
 	clear();
 
-	await type("Welcome to ECMA industries(TM) terminal", {
-		initialWait: 3000
-	});
+	await type("***** AusAI Hackathon 2023 *****", {});
+	await type("    Solving Aussie Problems", {});
 
-	await type(["> SET TERMINAL/BOOT", "Loading........................"], {
-		lineWait: 1000
-	});
-	await type(
-		[
-			".....",
-			"Please wait........",
-			"..........",
-			"...",
-			".",
-			".",
-			".",
-			".",
-			"."
-		],
-		{ lineWait: 250 }
-	);
+	await type("\n", {});
+	await type("Location:   KATHLEEN SYME COMMUNITY HALL", {});
+	await type("Prize Pool: $10,000", {});
 
-	await type(["OK.", " "]);
 
-	await type(["> SET TERMINAL/LOGON", "USER AUTHENTICATION CHECK"], {
-		lineWait: 1000,
-		finalWait: 3000
-	});
 
-	await pause();
-	return login();
+
+
+	await type([
+		"\n",
+		"\n",
+		">>> November 11th: Kickoff <<<",
+		"1100 - Kickoff",
+		"1130 - Team Formation",
+		"1330 - Lunch Break",
+		"1800 - Closing Keynote",
+		"1830 - Pub (optional)"
+	], {wait: 3, lineWait: 10})
+
+
+	await type([
+		"\n",
+		">>> November 18th: Pitch Night <<<",
+		"1600 - Keynote",
+		"1630 - Pitches",
+		"1730 - Apperteifs / Judging",
+		"1800 - Results",
+		"1830 - Closing Keynote",
+		"1900 - Pub 2 (optional)"
+	], {wait: 3, lineWait: 10})
+
+	
+
+	await type("\n\n", {})
+
+	
+	type("EOI Form", {})
+	type("ML/AI Meetup", {})
+	type("hello@adfhadfsj.com", {})
+	type("Judges and Speakers", {})
+	type("Prize Tracks", {})
+	type("FAQ", {})
+
+
+	// await pause();
+	// return login();
 }
 
 /** Login screen */

@@ -1,6 +1,6 @@
 
 import { type } from "./util/io.js";
-import { toggleFullscreen } from "./util/screens.js";
+import { toggleFullscreen, boot } from "./util/screens.js";
 import { registerHandlers } from "./util/ui.mjs";
 
 async function onLoad() {
@@ -13,9 +13,7 @@ async function onLoad() {
 	// Set up click event handlers for UI buttons
 	registerHandlers();
 
-	if(fullscreen) {
-		toggleFullscreen(true);
-	}
+	boot();
 
 	// If a command is passed in the URL, execute that immediately
 	if (command || debugParam) {

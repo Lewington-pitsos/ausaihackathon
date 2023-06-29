@@ -234,6 +234,7 @@ pre {
 }
 
 body.fullscreen #crt {
+	height: 100%;
 	font-size: 2.5rem;
 	position: fixed;
 	width: 100%;
