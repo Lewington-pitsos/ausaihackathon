@@ -80,6 +80,19 @@ function getChar(char) {
  * @param {String} options.link 
  * @param {Element} container DOM element where text will be typed
  */
+
+let fast = false;
+
+function setFast(value) {
+	fast = value;
+
+	if (fast) {
+		setTimeout(() => {
+			fast = false;
+		}, 7000);
+	}
+}
+
 async function type(
 	text,
 	options = {},
@@ -99,6 +112,13 @@ async function type(
 		clearContainer = false,
 		link = null,
 	} = options;
+
+	if (fast) {
+		wait = 0;
+		initialWait = 0;
+		finalWait = 0;
+		lineWait = 0;
+	}
 
 	// If text is an array, e.g. type(['foo', 'bar'])
 	if (processChars && Array.isArray(text)) {
@@ -437,4 +457,4 @@ function addStylesheet(href) {
 	head.appendChild(link);
 }
 
-export { prompt, input, cleanInput, type, parse, scroll, waitForKey };
+export { prompt, input, cleanInput, type, parse, scroll, waitForKey, setFast };

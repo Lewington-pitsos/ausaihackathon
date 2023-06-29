@@ -1,4 +1,4 @@
-import { parse, type, prompt, input } from "./io.js";
+import { parse, type, prompt, input, setFast } from "./io.js";
 import pause from "./pause.js";
 import alert from "./alert.js";
 import say from "./speak.js";
@@ -65,6 +65,7 @@ async function typeConnect() {
 	type("EOI Form", {link: ROOT_URL + "?command=help"})
 	typeMail();
 	type("ML/AI Meetup", {link: "https://www.meetup.com/en-AU/machine-learning-ai-meetup/"})
+	type("Website Repo", {link: "https://github.com/Lewington-pitsos/ausaihackathon"})
 	await doubleNewline()
 }
 
@@ -121,9 +122,26 @@ learning talent in Melbourne, let's talk.
 	await doubleNewline()
 }
 
+
 /** Boot screen */
 async function boot(page) {
 	clear();
+
+	var skipListener = function() {
+		setFast(true);
+	};
+
+	var keySkipListener = function(e) {
+		if (e.key === 'Enter') {
+			setFast(true);
+		} else if (e.key === 'Escape') {
+			setFast(true);
+		}
+	}
+
+	window.addEventListener('click', skipListener, false);
+	window.addEventListener('keypress', keySkipListener, false);
+
 
 	await type("***** AusAI Hackathon 2023 *****", {});
 
@@ -141,6 +159,11 @@ async function boot(page) {
 
 	await typeMenue(page)
 	await newline()
+
+	window.removeEventListener('click', skipListener, false);
+	window.removeEventListener('keypress', keySkipListener, false);
+
+	setFast(false);
 }
 
 
@@ -173,7 +196,7 @@ async function main() {
 	let command = await input();
 	try {
 		var clientHeight = document.getElementById('main-terminal').clientHeight;
-		if (screen.height - clientHeight < 400) {
+		if (screen.height - clientHeight < 250) {
 			clear();	
 		}
 		await parse(command);
