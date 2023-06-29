@@ -151,6 +151,14 @@ a {
 #monitor:not(.off) {
 	box-shadow: 0.6px 90px 110px -60px var(--bg); /* screen glow */
 }
+.sponsors {
+
+}
+.sponsor {
+	font-size: 1.2rem;
+}
+
+
 #screen {
 	position: relative;
 	border: 30px solid transparent;
@@ -165,7 +173,6 @@ pre {
 	font-family: "VT323", monospace;
 }
 #crt {
-	min-width: 80ch; /* This makes 80 monospace characters fit on the screen */
 	height: calc(80ch * 0.8);
 	font-size: max(
 		1rem,
@@ -206,11 +213,13 @@ pre {
 #bound {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 }
 
-.sidebar {}
+.sidebar {
+	padding: 2rem;
+}
 
 #monitor:not(.off) #crt:before {
 	content: " ";
@@ -264,6 +273,7 @@ body.fullscreen #crt {
 }
 
 .terminal {
+	margin-right: 200px;
 	width: 550px;
 	position: relative;
 	height: 100%;
