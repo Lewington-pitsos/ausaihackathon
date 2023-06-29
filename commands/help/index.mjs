@@ -1,6 +1,6 @@
 const output = [
 	"Available commands:",
-	"help, fallout, brogue, dino, hackerman, matrix, screensaver, cowsay, fire, clear, logout, reboot, quit"
+	"help, brogue, dino, hackerman, matrix, screensaver, cowsay, clear, logout, reboot, quit"
 ];
 
 export { output };

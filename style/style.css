@@ -279,6 +279,10 @@ body.fullscreen #crt {
 	/* animation: textShadow 4s infinite; */
 }
 
+.interactive-terminal {
+	text-transform: uppercase;
+}
+
 .terminal,
 .fullscreen {
 	color: var(--color);

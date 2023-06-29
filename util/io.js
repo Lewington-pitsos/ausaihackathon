@@ -238,6 +238,21 @@ async function input(pw) {
 		// This handles all user input
 		const onKeyDown = (event) => {
 			typeSound();
+			// Too many characters
+			if (event.target.textContent.length > 45) {
+				event.preventDefault();
+				event.target.setAttribute(
+					"contenteditable",
+					false
+				);
+				let result = cleanInput(
+					event.target.textContent
+				);
+
+				// history
+				addToHistory(result);
+				resolve(result);
+			}
 			// ENTER
 			if (event.keyCode === 13) {
 				event.preventDefault();
@@ -377,7 +392,6 @@ async function parse(input) {
 
 	// Execute the command (default export)
 	await module.default?.(args);
-
 	return;
 }
 

@@ -1,7 +1,6 @@
 
 import { type } from "./util/io.js";
 import { boot } from "./util/screens.js";
-import { registerHandlers } from "./util/ui.mjs";
 
 async function onLoad() {
 	// Check for query parameters in the URL, e.g. ?command=help&fullscreen=1
@@ -12,15 +11,11 @@ async function onLoad() {
 	const pageHref = window.location.search;
 	const searchParams = new URLSearchParams(pageHref.substring(pageHref.indexOf('?')));
 
-	// Set up click event handlers for UI buttons
-	registerHandlers();
-
-	boot(searchParams.get('goto'));
+	await boot(searchParams.get('goto'));
+	const { main } = await import("./util/screens.js");
+	main();
 
 	// If a command is passed in the URL, execute that immediately
-	if (command || debugParam) {
-		run(command, debugParam)
-	}
 }
 
 async function run(command, debug) {

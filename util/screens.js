@@ -8,13 +8,13 @@ const PW = "admin";
 
 const ROOT_URL = "http://127.0.0.1:5500/index.html"
 
-function typeMenue() {
+async function typeMenue() {
 	type("* Home", {link: ROOT_URL})
 	type("* Sign Up", {link: ROOT_URL})
 	type("* Connect", {link: ROOT_URL + "?goto=connect"})
 	type("* Judges and Speakers", {link: ROOT_URL + "?goto=judges"})
 	type("* Prize Tracks", {link: ROOT_URL + "?goto=prizes"})
-	type("* FAQ", {link: ROOT_URL + "?goto=faq"})
+	await type("* FAQ", {link: ROOT_URL + "?goto=faq"})
 }
 
 
@@ -139,7 +139,8 @@ async function boot(page) {
 		await typeMainPage();
 	}
 
-	typeMenue(page)
+	await typeMenue(page)
+	await newline()
 }
 
 
@@ -171,9 +172,13 @@ async function login() {
 async function main() {
 	let command = await input();
 	try {
+		var clientHeight = document.getElementById('main-terminal').clientHeight;
+		if (screen.height - clientHeight < 400) {
+			clear();	
+		}
 		await parse(command);
 	} catch (e) {
-		if (e.message) await type(e.message);
+		if (e.message) await type(e.message, {}, document.querySelector(".terminal"));
 	}
 
 	main();
@@ -270,6 +275,8 @@ function div(...args) {
 
 function clear(screen = document.querySelector(".terminal")) {
 	screen.innerHTML = "";
+	const interactive = document.querySelector(".terminal");
+	interactive.innerHTML = "";
 }
 
 export {

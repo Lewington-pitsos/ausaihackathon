@@ -40,24 +40,3 @@ function theme(event, name) {
 	document.body.classList = "theme-" + name;
 	handleClick();
 }
-
-function fullscreen(event) {
-	toggleFullscreen();
-	event.target.blur();
-}
-
-function globalListener({ keyCode }) {
-	if (keyCode === 122) {
-		// F11
-		toggleFullscreen();
-	} else if (keyCode === 27) {
-		// ESC
-		toggleFullscreen(false);
-	}
-}
-
-function registerHandlers() {
-	document.addEventListener("keydown", globalListener);
-}
-
-export { registerHandlers };
