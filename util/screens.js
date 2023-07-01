@@ -24,7 +24,7 @@ async function typeMainPage() {
 	await type("    Solving Aussie Problems", {});
 
 	await type("\n", {});
-	await type("Location:   KATHLEEN SYME COMMUNITY HALL", {});
+	await type("Location: KATHLEEN SYME Center", {});
 
 	await newline()
 

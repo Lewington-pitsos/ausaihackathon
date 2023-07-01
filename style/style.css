@@ -161,7 +161,6 @@ a {
 #screen {
 	position: relative;
 	border: 30px solid transparent;
-	border-image-source: url(/img/bezel_gray.png);
 	border-image-slice: 30 fill;
 	border-image-outset: 0;
 }
@@ -248,9 +247,23 @@ pre {
 	display: none !important;
 }
 
+@media screen and (max-width: 700px) {
+	body.fullscreen #crt {
+		font-size: 1.4rem;
+	}
+  }
+
+
+  @media screen and (min-width: 700px) {
+	body.fullscreen #crt {
+		font-size: 2.5rem;
+	}
+  }
+
+
+
 body.fullscreen #crt {
 	height: 100%;
-	font-size: 2.5rem;
 	position: absolute;
 	width: 100%;
 	left: 0;
@@ -268,8 +281,13 @@ body.fullscreen #crt {
 	height: 100%;
 }
 
+@media screen and (min-width: 800px) {
+	.terminal {
+		margin-right: 200px;
+	}
+  }
+
 .terminal {
-	margin-right: 200px;
 	width: 650px;
 	position: relative;
 	height: 100%;
