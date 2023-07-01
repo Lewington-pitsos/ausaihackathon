@@ -6,15 +6,17 @@ import say from "./speak.js";
 const USER = "admin";
 const PW = "admin";
 
-const ROOT_URL = "http://127.0.0.1:5500/index.html"
+function getRoot() {
+	return window.location.href.split('?')[0]}
 
 async function typeMenue() {
-	type("* Home", {link: ROOT_URL})
-	type("* Sign Up", {link: ROOT_URL})
-	type("* Connect", {link: ROOT_URL + "?goto=connect"})
-	type("* Judges and Speakers", {link: ROOT_URL + "?goto=judges"})
-	type("* Prize Tracks", {link: ROOT_URL + "?goto=prizes"})
-	await type("* FAQ", {link: ROOT_URL + "?goto=faq"})
+	const root_url = getRoot();
+	type("* Home", {link: root_url})
+	type("* Sign Up", {link: root_url})
+	type("* Connect", {link: root_url + "?goto=connect"})
+	type("* Judges and Speakers", {link: root_url + "?goto=judges"})
+	type("* Prize Tracks", {link: root_url + "?goto=prizes"})
+	await type("* FAQ", {link: root_url + "?goto=faq"})
 }
 
 
@@ -62,7 +64,7 @@ async function typeConnect() {
 	await type(">>> Drop us a line <<<", {})
 	await newline()	
 
-	type("EOI Form", {link: ROOT_URL + "?command=help"})
+	type("EOI Form", {link: getRoot() + "?command=help"})
 	typeMail();
 	type("ML/AI Meetup", {link: "https://www.meetup.com/en-AU/machine-learning-ai-meetup/"})
 	type("Website Repo", {link: "https://github.com/Lewington-pitsos/ausaihackathon"})
