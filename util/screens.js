@@ -16,6 +16,9 @@ async function typeMenue() {
 	type("* Connect", {link: root_url + "?goto=connect"})
 	type("* Judges and Speakers", {link: root_url + "?goto=judges"})
 	type("* Prize Tracks", {link: root_url + "?goto=prizes"})
+	//type("* Buy tickets", {link: root_url + "?goto=buyTicket"})
+	type("* Buy tickets", {link : "https://buy.stripe.com/test_14kbLEgW33oe9pu7ss"})
+	
 	await type("* FAQ", {link: root_url + "?goto=faq"})
 }
 
@@ -124,6 +127,22 @@ learning talent in Melbourne, let's talk.
 	await doubleNewline()
 }
 
+async function typeBuyTicket() {
+	const prizes_content = `
+
+>>> Buy ticket <<<
+
+We are seeking sponsors.
+If you want early exposure to emerging machine
+learning talent in Melbourne, let's talk.
+
+`
+	
+	//await type(prizes_content, {})
+	//await typeMail()
+	//await doubleNewline()
+}
+
 
 /** Boot screen */
 async function boot(page) {
@@ -155,7 +174,10 @@ async function boot(page) {
 		await typePrizes()
 	} else if (page === 'connect') {
 		await typeConnect();
-	} else {
+	} else if( page ==='buyTicket') {
+		await typeBuyTicket();
+	}
+	else {
 		await typeMainPage();
 	}
 
