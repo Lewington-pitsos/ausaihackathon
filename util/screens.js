@@ -28,7 +28,7 @@ async function typeMainPage() {
 
 	await newline()
 
-	type(">>> November 11th: Kickoff <<<", {}),
+	type(">>> November 18th: Kickoff <<<", {}),
 	type("1100 - Keynote", {}),
 	type("1130 - Team Formation", {}),
 	type("1330 - Lunch Break", {}),
@@ -36,7 +36,7 @@ async function typeMainPage() {
 	await type("1830 - Pub (optional)", {})
 	await newline()
 
-	type(">>> November 18th: Pitch Night <<<", {})
+	type(">>> November 25th: Pitch Night <<<", {})
 	type("1600 - Keynote", {})
 	type("1630 - Pitches", {})
 	type("1730 - Judging", {})
