@@ -83,12 +83,11 @@ A: You form a team (or bring one) on the 18th,
 Q: Who is this for? 
 A: Anyone who wants to:
  - Battle test latest Machine Learning/AI tools
- - Meet other Machine Learning professionals
- - Win ca$h money
- - Possibly get hired by a sponsor
+ - Meet other smart coders
+ - Get hired???
 
 Q: What to I need to bring on the day?
-A: Your laptop and your manners
+A: Your laptop and ~90 billion neurons
 
 `.split('\n').map(line => line === "" ? "\n" : line)
 
