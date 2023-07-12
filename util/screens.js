@@ -76,9 +76,9 @@ const faq_content = `
 >>> FAQ <<<
 
 Q: How does it work?
-A: You form a team (or bring one) on the 11th,
+A: You form a team (or bring one) on the 18th,
    then you have a week to build an AI project.
-   On the 18th you pitch it to the judges.
+   On the 25th you pitch it to the judges.
    
 Q: Who is this for? 
 A: Anyone who wants to:
