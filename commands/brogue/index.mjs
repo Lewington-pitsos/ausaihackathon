@@ -1,5 +1,5 @@
 
-import { getScreen, showTemplateScreen, addTemplate, clear } from "../../util/screens.js";
+import { getScreen, showTemplateScreen, addTemplate, clear, hideSidebar, showSidebar } from "../../util/screens.js";
 import { type, waitForKey } from "../../util/io.js";
 import say from "../../util/speak.js";
 import alert from "../../util/alert.js";
@@ -17,6 +17,7 @@ const output = [
 
 async function brogue() {
 	clear();
+	hideSidebar();
 	say("BROGUE", 0.5, 0.8);
 	return new Promise(async resolve => {
 		// LOGO
@@ -53,6 +54,7 @@ async function brogue() {
 			forceSquareRatio: true, // display is buggy without this?
 			onQuit: () => {
 				gameScreen.remove();
+				showSidebar();
 				resolve();
 			},
 			onMessage: async (txt) => {

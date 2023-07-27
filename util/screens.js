@@ -213,6 +213,14 @@ function addClasses(el, ...cls) {
 	el.classList.add(...list);
 }
 
+function hideSidebar() {
+	document.querySelector(".sidebar").classList.add("hidden");
+}
+
+function showSidebar() {
+	document.querySelector(".sidebar").classList.remove("hidden");
+}
+
 function getScreen(...cls) {
 	let div = document.createElement("div");
 	addClasses(div, "fullscreen", ...cls);
@@ -314,5 +322,7 @@ export {
 	el,
 	loadTemplates,
 	addTemplate,
-	showTemplateScreen
+	showTemplateScreen,
+	hideSidebar,
+	showSidebar
 };

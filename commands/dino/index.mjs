@@ -1,9 +1,10 @@
 import alert from "../../util/alert.js";
-import { getScreen, clear, div, el } from "../../util/screens.js";
+import { getScreen, clear, div, el, hideSidebar, showSidebar } from "../../util/screens.js";
 import Game from './game.mjs';
 
 function dino() {
 	clear();
+	hideSidebar();
 
 	return new Promise(resolve => {
 		let gameScreen = getScreen("dino");
@@ -11,6 +12,7 @@ function dino() {
 
 		const onGameOver = async (score) => {
 			await alert(`YOU DIED! \n Score: ${score}`)
+			showSidebar();
 			resolve();
 		};
 		

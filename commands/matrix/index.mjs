@@ -1,8 +1,9 @@
-import { getScreen, clear } from "../../util/screens.js";
+import { getScreen, clear, hideSidebar, showSidebar } from "../../util/screens.js";
 
 const output = "There is no spoon.";
 async function matrix() {
 	clear();
+	hideSidebar();
 
 	return new Promise(resolve => {
 		// DOM stuff
@@ -11,6 +12,7 @@ async function matrix() {
 		const remove = event => {
 			event.preventDefault();
 			container.remove();
+			showSidebar();
 			resolve();
 		};
 

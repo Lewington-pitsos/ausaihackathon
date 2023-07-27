@@ -1,5 +1,5 @@
 import { type, scroll } from "../../util/io.js";
-import { div, clear } from "../../util/screens.js";
+import { div, clear, hideSidebar, showSidebar } from "../../util/screens.js";
 import alert from "../../util/alert.js";
 import { typeSound } from "../../sound/index.js";
 import say from "../../util/speak.js";
@@ -15,6 +15,7 @@ async function hackerman() {
 
 	return new Promise(resolve => {
 		clear();
+		hideSidebar();
 
 		let typer = div();
 
@@ -27,6 +28,7 @@ async function hackerman() {
 			if (event.key === 'c' && event.ctrlKey) {
 				// Ctrl+C => exit
 				clear();
+				showSidebar();
 				resolve();
 			} else if (event.key === 'Enter') {
 				// Enter

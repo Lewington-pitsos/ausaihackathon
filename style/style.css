@@ -207,6 +207,12 @@ pre {
 	/* animation-fill-mode: forwards; */
 }
 
+
+.hidden {
+	display: none;
+}
+
+
 #bound {
 	display: flex;
 	flex-direction: row;
