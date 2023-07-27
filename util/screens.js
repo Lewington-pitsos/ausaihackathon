@@ -144,7 +144,7 @@ async function boot(page) {
 	window.addEventListener('keypress', keySkipListener, false);
 
 
-	await type("***** AusAI Hackathon 2023 *****", {});
+	await type("***** A.I. Hack Melb 2023 *****", {});
 
 	if (page === 'faq') {
 		await type(faq_content, {});
