@@ -24,7 +24,7 @@ async function typeMainPage() {
 	await type("    Solving Aussie Problems", {});
 
 	await type("\n", {});
-	await type("Location: KATHLEEN SYME Center", {});
+	await type("Level 2/452 Flinders St Melbourne (Eliiza)", {link: "https://www.google.com/maps/place/Eliiza/@-37.8194277,144.9585291,15z/data=!4m2!3m1!1s0x0:0x841578e120915922?sa=X&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAg9EAA&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAhCEAg"});
 
 	await newline()
 

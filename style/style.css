@@ -150,12 +150,12 @@ a {
 #monitor:not(.off) {
 	box-shadow: 0.6px 90px 110px -60px var(--bg); /* screen glow */
 }
-.sponsors {
 
+.sponsors.header {
+	margin-bottom: 4rem;
 }
-.sponsor {
-	font-size: 1.2rem;
-}
+
+
 
 
 #screen {
@@ -186,6 +186,7 @@ pre {
 	transition: all 0.5s;
 }
 
+
 #crt:after {
 	content: " ";
 	opacity: 0;
@@ -211,10 +212,15 @@ pre {
 	flex-direction: row;
 	justify-content: flex-start;
 	flex-wrap: wrap;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .sidebar {
 	padding: 2rem;
+	width: 350px;
+	z-index: 9
 }
 
 #monitor:not(.off) #crt:before {
@@ -247,7 +253,28 @@ pre {
 	display: none !important;
 }
 
+.no-underline {
+	text-decoration: none;
+}
+
+.fill-link {
+	display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 700px) {
+	body.fullscreen #crt {
+		font-size: 1.4rem;
+	}
+
+
+	.sponsor {
+		font-size: 0.35rem;
+	}
+	
+
 	body.fullscreen #crt {
 		font-size: 1.4rem;
 	}
@@ -257,6 +284,15 @@ pre {
   @media screen and (min-width: 700px) {
 	body.fullscreen #crt {
 		font-size: 2.5rem;
+	}
+
+	.sponsor {
+		font-size: 0.6rem;
+	}
+	
+
+	.terminal {
+		height: 100%;
 	}
   }
 
@@ -282,15 +318,11 @@ body.fullscreen #crt {
 }
 
 @media screen and (min-width: 800px) {
-	.terminal {
-		margin-right: 200px;
-	}
   }
 
 .terminal {
-	width: 650px;
+	width: 600px;
 	position: relative;
-	height: 100%;
 	padding: 2rem;
 	word-break: break-word;
 	text-transform: uppercase;
