@@ -28,20 +28,27 @@ async function typeMainPage() {
 
 	await newline()
 
-	type(">>> November 18th: Kickoff <<<", {}),
+	type(">>> Nov 18th: Kickoff <<<", {}),
 	type("1100 - Keynote", {}),
 	type("1130 - Team Formation", {}),
 	type("1330 - Lunch Break", {}),
-	type("1800 - Closing Keynote", {}),
-	await type("1830 - Pub (optional)", {})
+	await type("1830 - Pub", {})
 	await newline()
 
-	type(">>> November 25th: Pitch Night <<<", {})
+	type(">>> Nov 25th: Submission <<<", {}),
+	type("1700 - Submit Code + Demo (online)", {}),
+	await newline()
+
+	type(">>> Nov 26th: Finalists Selected <<<", {}),
+	type("1800 - Finalists Announced (online)", {}),
+	await newline()
+
+	type(">>> Nov 30th: Pitch Night <<<", {})
 	type("1600 - Keynote", {})
 	type("1630 - Pitches", {})
 	type("1730 - Judging", {})
 	type("1800 - Results", {})
-	await type("1900 - Pub 2 (optional)", {})
+	await type("1900 - Pub 2", {})
 	await doubleNewline()
 }
 
@@ -76,18 +83,23 @@ const faq_content = `
 >>> FAQ <<<
 
 Q: How does it work?
-A: You form a team (or bring one) on the 18th,
-   then you have a week to build an AI project.
-   On the 25th you pitch it to the judges.
+A: You form a team (or bring one) on the 25th,
+   then you have a week to build an AI system
+   which solves an Australian Problem.
+   On the 25th you submit a video demo and 
+   your code. Finalists will be invited to 
+   do a final pitch to the judges and a large
+   audience on the 30th. 
    
 Q: Who is this for? 
 A: Anyone who wants to:
- - Battle test latest Machine Learning/AI tools
+ - Get hands on experience with ML/AI tools
+ - Solve an actual god damn problem
  - Meet other smart coders
- - Get hired???
+ - Get hired maybe
 
 Q: What to I need to bring on the day?
-A: Your laptop and ~90 billion neurons
+A: Your laptop and ~90 bil biological neurons
 
 `.split('\n').map(line => line === "" ? "\n" : line)
 
