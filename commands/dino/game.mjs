@@ -124,6 +124,8 @@ function Game({ container, onGameOver }) {
 
 Game.prototype.resize = function () {
 	let { width, height } = this.container.getBoundingClientRect();
+	height = Math.round(height * 0.98);
+	width = Math.round(width * 0.98)
 	this.canvas.setAttribute('width', width);
 	this.canvas.setAttribute('height', height);
 

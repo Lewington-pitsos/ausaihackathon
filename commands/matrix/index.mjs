@@ -29,8 +29,8 @@ async function matrix() {
 		let bg = body.getPropertyValue("--bg");
 
 		const ctx = canvas.getContext("2d");
-		const w = (canvas.width = container.offsetWidth);
-		const h = (canvas.height = container.offsetHeight);
+		const w = (canvas.width = Math.round(container.offsetWidth * 0.98));
+		const h = (canvas.height = Math.round(container.offsetHeight * 0.98));
 		const cols = Math.floor(w / 20) + 1;
 		const ypos = Array(cols).fill(0);
 
