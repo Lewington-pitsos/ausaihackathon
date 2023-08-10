@@ -39,7 +39,7 @@ async function typeMainPage() {
 	type("1700 - Submit Code + Demo (online)", {}),
 	await newline()
 
-	type(">>> Nov 26th: Finalists Selected <<<", {}),
+	type(">>> Nov 26th: Finalists <<<", {}),
 	type("1800 - Finalists Announced (online)", {}),
 	await newline()
 
