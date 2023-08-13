@@ -71,7 +71,8 @@ async function typeConnect() {
 	await type(">>> Drop us a line <<<", {})
 	await newline()	
 
-	type("EOI Form", {link: getRoot() + "?command=help"})
+	type("Slack", {link: "https://join.slack.com/t/aihackmelb/shared_invite/zt-215zeikhf-oUSpUTm8l43MLEPnNVLrYA"})
+	type("EOI Form", {link: "https://docs.google.com/forms/d/e/1FAIpQLScrKz6S-mzDuShW9lmFkG2EtjdxFIvpEHTkCLjIVqTQ4xxpGw/viewform"})
 	typeMail();
 	type("ML/AI Meetup", {link: "https://www.meetup.com/en-AU/machine-learning-ai-meetup/"})
 	type("Website Repo", {link: "https://github.com/Lewington-pitsos/ausaihackathon"})
