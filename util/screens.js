@@ -191,7 +191,7 @@ async function boot(page) {
 	window.addEventListener('keypress', keySkipListener, false);
 
 
-	await type("***** A.I. Hack Melb 2023 *****", {});
+	await type("***** A.I. Hack 2023 *****", {});
 
 	if (!pages.has(page)) {
 		await typeMainPage()
@@ -246,7 +246,7 @@ async function main() {
 
 		if (pages.has(lower)) {
 			clear();
-			await type("***** A.I. Hack Melb 2023 *****", {});
+			await type("***** A.I. Hack 2023 *****", {});
 			await pages.get(lower)()
 			await typeMenu(lower)
 			await newline()
