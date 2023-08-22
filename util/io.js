@@ -359,7 +359,7 @@ async function input(pw) {
 }
 
 // Processes the user input and executes a command
-async function parse(input) {
+async function parse(input, pages) {
 	input = cleanInput(input);
 
 	if (!input) {
@@ -380,6 +380,7 @@ async function parse(input) {
 	}
 
 	let module;
+
 
 	// Try to import the command function
 	try {

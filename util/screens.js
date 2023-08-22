@@ -9,47 +9,14 @@ const PW = "admin";
 function getRoot() {
 	return window.location.href.split('?')[0]}
 
-async function typeMenue() {
+async function typeMenu() {
 	const root_url = getRoot();
 	type("* Home", {link: root_url})
+	type("* Agenda", {link: root_url + "?goto=agenda"})
 	type("* Sign Up", {link: root_url})
+	type("* Judges", {link: root_url + "?goto=judges"})
 	type("* Connect", {link: root_url + "?goto=connect"})
-	type("* Judges and Speakers", {link: root_url + "?goto=judges"})
-	type("* Prize Tracks", {link: root_url + "?goto=prizes"})
 	await type("* FAQ", {link: root_url + "?goto=faq"})
-}
-
-
-async function typeMainPage() {
-	await type("    Solving Aussie Problems", {});
-
-	await type("\n", {});
-	await type("Level 2/452 Flinders St Melbourne (Eliiza)", {link: "https://www.google.com/maps/place/Eliiza/@-37.8194277,144.9585291,15z/data=!4m2!3m1!1s0x0:0x841578e120915922?sa=X&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAg9EAA&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAhCEAg"});
-
-	await newline()
-
-	type(">>> Nov 18th: Kickoff <<<", {}),
-	type("1100 - Keynote", {}),
-	type("1130 - Team Formation", {}),
-	type("1330 - Lunch Break", {}),
-	await type("1830 - Pub", {})
-	await newline()
-
-	type(">>> Nov 25th: Submission <<<", {}),
-	type("1700 - Submit Code + Demo (online)", {}),
-	await newline()
-
-	type(">>> Nov 26th: Finalists <<<", {}),
-	type("1800 - Finalists Announced (online)", {}),
-	await newline()
-
-	type(">>> Nov 30th: Pitch Night <<<", {})
-	type("1600 - Keynote", {})
-	type("1630 - Pitches", {})
-	type("1730 - Judging", {})
-	type("1800 - Results", {})
-	await type("1900 - Pub 2", {})
-	await doubleNewline()
 }
 
 
@@ -84,13 +51,13 @@ const faq_content = `
 >>> FAQ <<<
 
 Q: How does it work?
-A: You form a team (or bring one) on the 25th,
+A: You form a team (or bring one) on the 18th,
    then you have a week to build an AI system
    which solves an Australian Problem.
    On the 25th you submit a video demo and 
    your code. Finalists will be invited to 
-   do a final pitch to the judges and a large
-   audience on the 30th. 
+   pitch to the judges and an audience of 300
+   on the 30th. 
    
 Q: Who is this for? 
 A: Anyone who wants to:
@@ -98,10 +65,6 @@ A: Anyone who wants to:
  - Solve an actual god damn problem
  - Meet other smart coders
  - Get hired maybe
-
-Q: What to I need to bring on the day?
-A: Your laptop and ~90 bil biological neurons
-
 `.split('\n').map(line => line === "" ? "\n" : line)
 
 
@@ -120,10 +83,39 @@ If you know someone with the chops, hit us up.
 	await doubleNewline()
 }
 
+async function typeAgenda() {
+	await newline()
+
+	type(">>> Nov 18th: Kickoff <<<", {}),
+	type("Eliiza, Level 2/452 Flinders St Melbourne", {link: "https://www.google.com/maps/place/Eliiza/@-37.8194277,144.9585291,15z/data=!4m2!3m1!1s0x0:0x841578e120915922?sa=X&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAg9EAA&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAhCEAg"});
+	type("1100 - Keynote", {}),
+	type("1130 - Team Formation", {}),
+	type("1330 - Lunch Break", {}),
+	await type("1830 - Event Close, Pub", {})
+	await newline()
+
+	type(">>> Nov 25th: Submission <<<", {}),
+	await type("1700 - Submit Code + Demo online", {}),
+	await newline()
+
+	type(">>> Nov 26th: First Round Results <<<", {}),
+	await type("1800 - Finalists Announced", {}),
+	await newline()
+
+	type(">>> Nov 30th: Pitch Night <<<", {})
+	type("NAB Bowl");
+	type("1800 - Intro", {})
+	type("1820 - Pitches", {})
+	type("1900 - Judging + Keynote", {})
+	type("1930 - Winners Announced", {})
+	await type("1945 - Event Close, Pub", {})
+	await doubleNewline()
+}
+
 async function typePrizes() {
 	const prizes_content = `
 
->>> Price Tracks <<<
+>>> Prize Tracks <<<
 
 We are seeking sponsors.
 If you want early exposure to emerging machine
@@ -136,6 +128,48 @@ learning talent in Melbourne, let's talk.
 	await doubleNewline()
 }
 
+
+async function typeMainPage() {
+
+	await newline()
+
+	await type("Solve an Aussie Problem with AI ", {})
+	await newline()
+
+	type("You have one week to form a team and use", {})
+	type("open source tools to build a machine", {})
+	type("learning system which solves an aussie", {})
+	await type("problem", {})
+	await newline()
+
+	type("The best solutions will be invited to", {})
+	type("pitch to our judges at 300 person event", {})
+	await type("hosted by NAB", {})
+	await newline()
+
+	type("The winner will receive notoriety, immense", {})
+	await type("kudos and prizes valued @ $5000 ", {})
+	await newline()
+
+	await type("get on it cobba", {link: ""})
+	await newline()
+}
+
+async function typeFAQ() {
+	await type(faq_content, {});
+	await type("check out the slack for more", {link: "https://join.slack.com/t/aihackmelb/shared_invite/zt-215zeikhf-oUSpUTm8l43MLEPnNVLrYA"});
+	await newline()
+}
+
+
+const pages = new Map([
+	['judges', typeJudges],
+	['faq', typeFAQ],
+	['prizes', typePrizes],
+	['agenda', typeAgenda],
+	['connect', typeConnect],
+	['home', typeMainPage]
+])
 
 /** Boot screen */
 async function boot(page) {
@@ -159,19 +193,13 @@ async function boot(page) {
 
 	await type("***** A.I. Hack Melb 2023 *****", {});
 
-	if (page === 'faq') {
-		await type(faq_content, {});
-	} else if (page === 'judges') {
-		await typeJudges()
-	} else if (page === 'prizes') {
-		await typePrizes()
-	} else if (page === 'connect') {
-		await typeConnect();
+	if (!pages.has(page)) {
+		await typeMainPage()
 	} else {
-		await typeMainPage();
+		await pages.get(page)()
 	}
 
-	await typeMenue(page)
+	await typeMenu(page)
 	await newline()
 
 	window.removeEventListener('click', skipListener, false);
@@ -213,6 +241,18 @@ async function main() {
 		if (screen.height - clientHeight < 250) {
 			clear();	
 		}
+
+		const lower = command.toLowerCase()
+
+		if (pages.has(lower)) {
+			clear();
+			await type("***** A.I. Hack Melb 2023 *****", {});
+			await pages.get(lower)()
+			await typeMenu(lower)
+			await newline()
+			return
+		}
+
 		await parse(command);
 	} catch (e) {
 		if (e.message) await type(e.message, {}, document.querySelector(".terminal"));
