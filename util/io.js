@@ -111,6 +111,7 @@ async function type(
 		processChars = true,
 		clearContainer = false,
 		link = null,
+		new_tab = null,
 	} = options;
 
 	if (fast) {
@@ -159,6 +160,10 @@ async function type(
 			if (options.link) {
 				const lnk = document.createElement("a");
 				lnk.setAttribute("href", options.link)
+				if (options.new_tab) {
+					lnk.setAttribute("href", "#")
+					lnk.setAttribute("onclick", `window.open("${options.link}");return false;`)
+				}
 				
 				lnk.appendChild(typer)
 				container.appendChild(lnk);

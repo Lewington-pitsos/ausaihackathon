@@ -13,7 +13,8 @@ async function typeMenu() {
 	const root_url = getRoot();
 	type("* Home", {link: root_url})
 	type("* Agenda", {link: root_url + "?goto=agenda"})
-	type("* Sign Up", {link: root_url})
+	type("* Hack Day Tickets", {link: "https://events.humanitix.com/ai-hack-melb-2023-kickoff-event", new_tab: true})
+	type("* Pitch Night Tickets", {link: "https://events.humanitix.com/ai-hack-melb-2023-pitch-night", new_tab: true})
 	type("* Judges", {link: root_url + "?goto=judges"})
 	type("* Connect", {link: root_url + "?goto=connect"})
 	await type("* FAQ", {link: root_url + "?goto=faq"})
@@ -38,11 +39,11 @@ async function typeConnect() {
 	await type(">>> Drop us a line <<<", {})
 	await newline()	
 
-	type("Slack", {link: "https://join.slack.com/t/aihackmelb/shared_invite/zt-215zeikhf-oUSpUTm8l43MLEPnNVLrYA"})
-	type("EOI Form", {link: "https://docs.google.com/forms/d/e/1FAIpQLScrKz6S-mzDuShW9lmFkG2EtjdxFIvpEHTkCLjIVqTQ4xxpGw/viewform"})
+	type("Slack", {link: "https://join.slack.com/t/aihackmelb/shared_invite/zt-215zeikhf-oUSpUTm8l43MLEPnNVLrYA", new_tab: true})
+	type("EOI Form", {link: "https://docs.google.com/forms/d/e/1FAIpQLScrKz6S-mzDuShW9lmFkG2EtjdxFIvpEHTkCLjIVqTQ4xxpGw/viewform", new_tab: true})
 	typeMail();
-	type("ML/AI Meetup", {link: "https://www.meetup.com/en-AU/machine-learning-ai-meetup/"})
-	type("Website Repo", {link: "https://github.com/Lewington-pitsos/ausaihackathon"})
+	type("ML/AI Meetup", {link: "https://www.meetup.com/en-AU/machine-learning-ai-meetup/", new_tab: true})
+	type("Website Repo", {link: "https://github.com/Lewington-pitsos/ausaihackathon", new_tab: true})
 	await doubleNewline()
 }
 
@@ -51,18 +52,18 @@ const faq_content = `
 >>> FAQ <<<
 
 Q: How does it work?
-A: You form a team (or bring one) on the 18th,
+A: You form a team (or bring one) on nov 18th,
    then you have a week to build an AI system
    which solves an Australian Problem.
-   On the 25th you submit a video demo and 
+   On nov 25th you submit a video demo and 
    your code. Finalists will be invited to 
-   pitch to the judges and an audience of 300
-   on the 30th. 
+   pitch to 4 highly experienced judges 
+   and an audience of 300 on nov 30th. 
    
 Q: Who is this for? 
 A: Anyone who wants to:
- - Get hands on experience with ML/AI tools
- - Solve an actual god damn problem
+ - Get hands-on experience with ML/AI tools
+ - Solve an actual real world problem
  - Meet other smart coders
  - Get hired maybe
 `.split('\n').map(line => line === "" ? "\n" : line)
@@ -87,7 +88,7 @@ async function typeAgenda() {
 	await newline()
 
 	type(">>> Nov 18th: Kickoff <<<", {}),
-	type("Eliiza, Level 2/452 Flinders St Melbourne", {link: "https://www.google.com/maps/place/Eliiza/@-37.8194277,144.9585291,15z/data=!4m2!3m1!1s0x0:0x841578e120915922?sa=X&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAg9EAA&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAhCEAg"});
+	type("Eliiza, Level 2/452 Flinders St", {link: "https://www.google.com/maps/place/Eliiza/@-37.8194277,144.9585291,15z/data=!4m2!3m1!1s0x0:0x841578e120915922?sa=X&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAg9EAA&ved=2ahUKEwi4s_-5-a-AAxXSxjgGHaQiD3sQ_BJ6BAhCEAg", new_tab: true});
 	type("1100 - Keynote", {}),
 	type("1130 - Team Formation", {}),
 	type("1330 - Lunch Break", {}),
@@ -103,9 +104,9 @@ async function typeAgenda() {
 	await newline()
 
 	type(">>> Nov 30th: Pitch Night <<<", {})
-	type("NAB Bowl");
-	type("1800 - Intro", {})
-	type("1820 - Pitches", {})
+	type("The NAB Arena, 700 Bourke St", {link: "https://www.google.com/maps/place/700+Bourke+St,+Docklands+VIC+3008/@-37.8173415,144.9465557,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d454d0fd20d:0x71357e4ac4ec2a28!8m2!3d-37.8173458!4d144.949136!16s%2Fg%2F11b8v7mns3?entry=ttu", new_tab: true});
+	type("1530 - Snacks + Networking", {})
+	type("1800 - Pitches", {})
 	type("1900 - Judging + Keynote", {})
 	type("1930 - Winners Announced", {})
 	await type("1945 - Event Close, Pub", {})
@@ -148,16 +149,16 @@ async function typeMainPage() {
 	await newline()
 
 	type("The winner will receive notoriety, immense", {})
-	await type("kudos and prizes valued @ $5000 ", {})
+	await type("kudos and a share $5000 worth of prizes", {})
 	await newline()
 
-	await type("get on it cobba", {link: ""})
+	await type("get on it cobba", {link: "https://events.humanitix.com/ai-hack-melb-2023-kickoff-event", new_tab: true})
 	await newline()
 }
 
 async function typeFAQ() {
 	await type(faq_content, {});
-	await type("check out the slack for more", {link: "https://join.slack.com/t/aihackmelb/shared_invite/zt-215zeikhf-oUSpUTm8l43MLEPnNVLrYA"});
+	await type("see the event slack for more", {link: "https://join.slack.com/t/aihackmelb/shared_invite/zt-215zeikhf-oUSpUTm8l43MLEPnNVLrYA", new_tab: true});
 	await newline()
 }
 

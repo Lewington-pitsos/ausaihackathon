@@ -313,6 +313,13 @@ body.fullscreen #crt {
 	z-index: 999;
 }
 
+.purple-text {
+	color: #ff80ee !important
+}
+
+.strikethrough {
+	text-decoration: line-through;
+}
 .fullscreen {
 	position: absolute;
 	top: 0;
