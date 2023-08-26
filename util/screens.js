@@ -44,6 +44,8 @@ async function typeConnect() {
 	typeMail();
 	type("ML/AI Meetup", {link: "https://www.meetup.com/en-AU/machine-learning-ai-meetup/", new_tab: true})
 	type("Website Repo", {link: "https://github.com/Lewington-pitsos/ausaihackathon", new_tab: true})
+	type("Twitter", {link: "https://twitter.com/mlaiaus", new_tab: true})
+
 	await doubleNewline()
 }
 
@@ -105,7 +107,7 @@ async function typeAgenda() {
 
 	type(">>> Nov 30th: Pitch Night <<<", {})
 	type("The NAB Arena, 700 Bourke St", {link: "https://www.google.com/maps/place/700+Bourke+St,+Docklands+VIC+3008/@-37.8173415,144.9465557,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d454d0fd20d:0x71357e4ac4ec2a28!8m2!3d-37.8173458!4d144.949136!16s%2Fg%2F11b8v7mns3?entry=ttu", new_tab: true});
-	type("1530 - Snacks + Networking", {})
+	type("1730 - Snacks + Networking", {})
 	type("1800 - Pitches", {})
 	type("1900 - Judging + Keynote", {})
 	type("1930 - Winners Announced", {})
