@@ -146,15 +146,15 @@ async function typeMainPage() {
 	await newline()
 
 	type("The best solutions will be invited to", {})
-	type("pitch to our judges at 300 person event", {})
-	await type("hosted by NAB", {})
+	type("present to our judges at a 300 person", {})
+	await type("pitch night hosted by NAB", {})
 	await newline()
 
 	type("The winner will receive notoriety, immense", {})
 	await type("kudos and a share $5000 worth of prizes", {})
 	await newline()
 
-	await type("get on it cobba", {link: "https://events.humanitix.com/ai-hack-melb-2023-kickoff-event", new_tab: true})
+	await type("get on it cobber", {link: "https://events.humanitix.com/ai-hack-melb-2023-kickoff-event", new_tab: true})
 	await newline()
 }
 
