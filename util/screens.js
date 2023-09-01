@@ -13,6 +13,7 @@ async function typeMenu() {
 	const root_url = getRoot();
 	type("* Home", {link: root_url})
 	type("* Agenda", {link: root_url + "?goto=agenda"})
+	type("* Rules", {link: "https://docs.google.com/document/d/1abkNEVxZPYhryMBUHb5sK_n7RmC18bOE72hYEcU2duw/edit?usp=sharing", new_tab: true})
 	type("* Hack Day Tickets", {link: "https://events.humanitix.com/ai-hack-melb-2023-kickoff-event", new_tab: true})
 	type("* Pitch Night Tickets", {link: "https://events.humanitix.com/ai-hack-melb-2023-pitch-night", new_tab: true})
 	type("* Judges", {link: root_url + "?goto=judges"})
@@ -115,23 +116,6 @@ async function typeAgenda() {
 	await doubleNewline()
 }
 
-async function typePrizes() {
-	const prizes_content = `
-
->>> Prize Tracks <<<
-
-We are seeking sponsors.
-If you want early exposure to emerging machine
-learning talent in Melbourne, let's talk.
-
-`
-	
-	await type(prizes_content, {})
-	await typeMail()
-	await doubleNewline()
-}
-
-
 async function typeMainPage() {
 
 	await newline()
@@ -164,11 +148,14 @@ async function typeFAQ() {
 	await newline()
 }
 
+async function typeRules() {
+	await type('rules', {link: "https://docs.google.com/document/d/1abkNEVxZPYhryMBUHb5sK_n7RmC18bOE72hYEcU2duw/edit?usp=sharing", new_tab: true})
+}
 
 const pages = new Map([
 	['judges', typeJudges],
 	['faq', typeFAQ],
-	['prizes', typePrizes],
+	['rules', typeRules],
 	['agenda', typeAgenda],
 	['connect', typeConnect],
 	['home', typeMainPage]
