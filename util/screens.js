@@ -9,16 +9,31 @@ const PW = "admin";
 function getRoot() {
 	return window.location.href.split('?')[0]}
 
-async function typeMenu() {
+async function typeMenu(page) {
 	const root_url = getRoot();
-	type("* Home", {link: root_url})
-	type("* Agenda", {link: root_url + "?goto=agenda"})
-	type("* Rules", {link: "https://docs.google.com/document/d/1abkNEVxZPYhryMBUHb5sK_n7RmC18bOE72hYEcU2duw/edit?usp=sharing", new_tab: true})
+	console.log(page)
+
+	if (page != 'home' & page != null) {
+		type("* Home", {link: root_url})
+	}
+	if (page != 'agenda') {
+		type("* Agenda", {link: root_url + "?goto=agenda"})
+	}
+
+	if (page != 'rules') {
+		type("* Rules", {link: "https://docs.google.com/document/d/1abkNEVxZPYhryMBUHb5sK_n7RmC18bOE72hYEcU2duw/edit?usp=sharing", new_tab: true})
+	}
 	type("* Hack Day Tickets", {link: "https://events.humanitix.com/ai-hack-melb-2023-kickoff-event", new_tab: true})
 	type("* Pitch Night Tickets", {link: "https://events.humanitix.com/ai-hack-melb-2023-pitch-night", new_tab: true})
+
 	type("* Judges", {link: root_url + "?goto=judges"})
-	type("* Connect", {link: root_url + "?goto=connect"})
-	await type("* FAQ", {link: root_url + "?goto=faq"})
+	
+	if (page != 'connect') {
+		type("* Connect", {link: root_url + "?goto=connect"})
+	}
+	if (page != 'faq') {
+		await type("* FAQ", {link: root_url + "?goto=faq"})
+	}
 }
 
 
@@ -174,7 +189,6 @@ async function boot(page) {
 
 		window.addEventListener('click', skipListener, false);
 		window.addEventListener('keypress', keySkipListener, false);
-	
 
 		await type("***** A.I. Hack 2023 *****", {});
 
