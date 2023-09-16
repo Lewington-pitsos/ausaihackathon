@@ -72,21 +72,6 @@ A: Anyone who wants to:
 `.split('\n').map(line => line === "" ? "\n" : line)
 
 
-async function typeJudges() {
-	const judges_content = `
-
->>> Judges and Speakers <<<
-
-We are seeking judges and speakers. 
-If you know someone with the chops, hit us up.
-
-`
-	
-	await type(judges_content, {})
-	await typeMail()
-	await doubleNewline()
-}
-
 async function typeAgenda() {
 	await newline()
 
@@ -153,7 +138,6 @@ async function typeRules() {
 }
 
 const pages = new Map([
-	['judges', typeJudges],
 	['faq', typeFAQ],
 	['rules', typeRules],
 	['agenda', typeAgenda],
@@ -177,23 +161,37 @@ async function boot(page) {
 		}
 	}
 
-	window.addEventListener('click', skipListener, false);
-	window.addEventListener('keypress', keySkipListener, false);
 
-
-	await type("***** A.I. Hack 2023 *****", {});
-
-	if (!pages.has(page)) {
-		await typeMainPage()
+	const judgesHolder = document.getElementById('judges-holder');
+	const terminal = document.querySelector(".terminal")
+	if (page == 'judges') {
+		
+		judgesHolder.classList.remove("hidden");
+		terminal.classList.add("hidden");
 	} else {
-		await pages.get(page)()
+		terminal.classList.remove("hidden");
+		judgesHolder.classList.add("hidden");
+
+		window.addEventListener('click', skipListener, false);
+		window.addEventListener('keypress', keySkipListener, false);
+	
+
+		await type("***** A.I. Hack 2023 *****", {});
+
+		if (!pages.has(page)) {
+			await typeMainPage()
+		} else {
+			await pages.get(page)()
+		}
+
+		await typeMenu(page)
+		await newline()
+
+		
+		window.removeEventListener('click', skipListener, false);
+		window.removeEventListener('keypress', keySkipListener, false);
+
 	}
-
-	await typeMenu(page)
-	await newline()
-
-	window.removeEventListener('click', skipListener, false);
-	window.removeEventListener('keypress', keySkipListener, false);
 
 	setFast(false);
 }

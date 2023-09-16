@@ -213,6 +213,7 @@ pre {
 }
 
 
+
 #bound {
 	display: flex;
 	flex-direction: row;
@@ -313,8 +314,19 @@ body.fullscreen #crt {
 	z-index: 999;
 }
 
+.hidden {
+	display: none;
+}
+
 .purple-text {
 	color: #ff80ee !important
+}
+
+.advisors-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-bottom: 60px;
 }
 
 .strikethrough {
@@ -333,6 +345,30 @@ body.fullscreen #crt {
 @media screen and (min-width: 800px) {
   }
 
+.advisor {
+	width: 150px;
+	margin-bottom: 15px;
+}
+
+.advisor-subtitle {
+	margin-bottom: 30px;
+}
+
+.advisor-img-holder {
+	margin-bottom: 10px;  display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.advisor-head {
+	width: 100px;
+}
+
+.advisor-link {
+	text-decoration: none;
+}
+
 .terminal {
 	width: 600px;
 	position: relative;
@@ -350,6 +386,27 @@ body.fullscreen #crt {
 .fullscreen {
 	color: var(--color);
 	text-shadow: 0 0 5px #c8c8c8;
+}
+
+.image-cropper {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+  }
+  
+  img {
+	display: inline;
+	margin: 0 auto;
+	height: 100%;
+	width: auto;
+  }
+
+#judges-holder {
+	color: var(--color);
+	text-shadow: 0 0 5px #c8c8c8;
+	z-index: 9
 }
 
 .terminal,
