@@ -346,14 +346,18 @@ body.fullscreen #crt {
   }
 
 .advisor {
-	width: 150px;
+	width: 130px;
 	margin-bottom: 15px;
 }
 
 .advisor-subtitle {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
+
+.advisors-section.no-margin {
+	margin-bottom: 0;
+}
 .advisor-img-holder {
 	margin-bottom: 10px;  display: flex;
 	flex-direction: column;
