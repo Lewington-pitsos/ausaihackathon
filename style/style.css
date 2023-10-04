@@ -342,6 +342,18 @@ body.fullscreen #crt {
 	height: 100%;
 }
 
+.sponsor-logo {
+	width: 200px;
+	margin-bottom: 20px;
+}
+
+
+
+.cp-logo {
+	width: 70px;
+	margin-bottom: 10px;
+}
+
 @media screen and (min-width: 800px) {
   }
 
