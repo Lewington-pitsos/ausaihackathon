@@ -27,6 +27,8 @@ async function typeMenu(page) {
 	type("* Pitch Night Tickets", {link: "https://events.humanitix.com/ai-hack-melb-2023-pitch-night", new_tab: true})
 
 	type("* Judges", {link: root_url + "?goto=judges"})
+	type("* Mentors", {link: root_url + "?goto=mentors"})
+
 	
 	if (page != 'connect') {
 		type("* Connect", {link: root_url + "?goto=connect"})
@@ -178,10 +180,14 @@ async function boot(page) {
 
 
 	const judgesHolder = document.getElementById('judges-holder');
+	const mentorsHolder = document.getElementById('mentors-holder');
+
 	const terminal = document.querySelector(".terminal")
 	if (page == 'judges') {
-		
 		judgesHolder.classList.remove("hidden");
+		terminal.classList.add("hidden");
+	} else if (page == 'mentors') {
+		mentorsHolder.classList.remove("hidden");
 		terminal.classList.add("hidden");
 	} else {
 		terminal.classList.remove("hidden");

@@ -329,6 +329,11 @@ body.fullscreen #crt {
 	margin-bottom: 60px;
 }
 
+
+.large-text {
+	font-size: 2.2rem;
+}
+
 .strikethrough {
 	text-decoration: line-through;
 }
@@ -362,6 +367,12 @@ body.fullscreen #crt {
 	margin-bottom: 15px;
 }
 
+
+.mentor {
+	width: 200px;
+	margin-bottom: 15px;
+}
+
 .advisor-subtitle {
 	margin-bottom: 20px;
 }
@@ -379,6 +390,10 @@ body.fullscreen #crt {
 
 .advisor-head {
 	width: 100px;
+}
+
+.mentor-head {
+	width: 140px;
 }
 
 .advisor-link {
@@ -412,6 +427,15 @@ body.fullscreen #crt {
 	border-radius: 50%;
   }
   
+
+  .mentor .image-cropper {
+	width: 140px;
+	height: 140px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+  }
+
   img {
 	display: inline;
 	margin: 0 auto;
@@ -424,6 +448,13 @@ body.fullscreen #crt {
 	text-shadow: 0 0 5px #c8c8c8;
 	z-index: 9
 }
+
+#mentors-holder {
+	color: var(--color);
+	text-shadow: 0 0 5px #c8c8c8;
+	z-index: 9
+}
+
 
 .terminal,
 .fullscreen a {
