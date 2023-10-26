@@ -1,4 +1,3 @@
-
 import { type } from "./util/io.js";
 import { boot } from "./util/screens.js";
 

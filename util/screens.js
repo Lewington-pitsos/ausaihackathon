@@ -196,7 +196,7 @@ async function boot(page) {
 		window.addEventListener('click', skipListener, false);
 		window.addEventListener('keypress', keySkipListener, false);
 
-		await type("***** A.I. Hack 2023 *****", {});
+		await type("***** A.I. Hack 2023 *****", {initialWait: 0});
 
 		if (!pages.has(page)) {
 			await typeMainPage()
