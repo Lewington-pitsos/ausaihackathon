@@ -348,15 +348,15 @@ body.fullscreen #crt {
 }
 
 .sponsor-logo {
-	width: 200px;
-	margin-bottom: 20px;
+	width: 160px;
+	margin-bottom: 8px;
 }
 
 
 
 .cp-logo {
-	width: 70px;
-	margin-bottom: 10px;
+	width: 55px;
+	margin-bottom: 7px;
 }
 
 @media screen and (min-width: 800px) {
