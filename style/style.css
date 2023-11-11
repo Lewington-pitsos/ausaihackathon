@@ -226,7 +226,7 @@ pre {
 
 .sidebar {
 	padding: 2rem;
-	width: 350px;
+	width: 450px;
 	z-index: 9
 }
 
@@ -347,9 +347,20 @@ body.fullscreen #crt {
 	height: 100%;
 }
 
+.wilson-holder {
+	width: 160px;
+	display: inline-block;
+}
+
 .sponsor-logo {
 	width: 160px;
 	margin-bottom: 8px;
+}
+
+.humyn {
+	display: inline-block;
+	margin-bottom: 27px;
+	margin-top: 26px;
 }
 
 
