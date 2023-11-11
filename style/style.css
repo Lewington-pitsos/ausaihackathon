@@ -352,6 +352,10 @@ body.fullscreen #crt {
 	display: inline-block;
 }
 
+.mbot {
+	margin-bottom: 20px;
+}
+
 .sponsor-logo {
 	width: 160px;
 	margin-bottom: 8px;
